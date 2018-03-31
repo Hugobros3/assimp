@@ -41,10 +41,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package assimp
 
-import gli_.Texture
-import gli_.has
 import kotlin.reflect.KMutableProperty0
 import assimp.AI_INT_MERGE_SCENE as Ms
+
+infix fun Int.has(b: Int) = (this and b) != 0
+infix fun Int.hasnt(b: Int) = (this and b) == 0
 
 /** @brief Helper data structure for SceneCombiner.
  *
@@ -190,7 +191,7 @@ object SceneCombiner {
                 for (entry in cur().textures)
                     if (n != duplicates[n]) {
                         if (flags has Ms.DUPLICATES_DEEP_CPY)
-                            dest.textures[entry.key] = Texture(entry.value)
+                            dest.textures[entry.key] = entry.value
                         else continue
                     } else dest.textures[entry.key] = entry.value
                 offset[n] = cnt

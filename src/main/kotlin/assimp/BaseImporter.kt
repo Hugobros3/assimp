@@ -3,7 +3,6 @@ package assimp
 import assimp.format.ProgressHandler
 import glm_.plus
 import glm_.shl
-import uno.kotlin.uri
 import java.net.URI
 
 /**

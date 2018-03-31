@@ -3,3 +3,7 @@
 out
 build
 .gradle
+*.iml
+.project
+.classpath
+.settings

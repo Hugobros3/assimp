@@ -2,13 +2,14 @@ package assimp.format.assbin
 
 import assimp.*
 import assimp.format.X.reserve
-import gli_.has
-import gli_.hasnt
 import glm_.*
 import java.io.File
 import java.io.InputStream
 import java.net.URI
 import java.net.URL
+
+infix fun Int.has(b: Int) = (this and b) != 0
+infix fun Int.hasnt(b: Int) = (this and b) == 0
 
 class AssbinLoader : BaseImporter() {
 

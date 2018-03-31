@@ -1,7 +1,6 @@
 package assimp.format.obj
 
 import assimp.*
-import gli_.gli
 import java.io.IOException
 
 /**
@@ -72,8 +71,8 @@ class ObjFileImporter : BaseImporter() {
         // Create all materials
         createMaterials(pModel, pScene)
 
-        if (ASSIMP_LOAD_TEXTURES)
-            loadTextures(pScene, ioSystem)
+        //if (ASSIMP_LOAD_TEXTURES)
+        //    loadTextures(pScene, ioSystem)
     }
 
     /**  Creates all nodes of the model */
@@ -406,7 +405,7 @@ class ObjFileImporter : BaseImporter() {
     }
 
     /**  Load textures   */
-    fun loadTextures(scene: AiScene, ioSystem: IOSystem = this.ioSystem) {
+    /*fun loadTextures(scene: AiScene, ioSystem: IOSystem = this.ioSystem) {
 
         scene.materials.forEach { mtl ->
 
@@ -450,7 +449,7 @@ class ObjFileImporter : BaseImporter() {
                 }
             }
         }
-    }
+    }*/
 }
 
 

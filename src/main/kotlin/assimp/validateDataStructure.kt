@@ -41,7 +41,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package assimp
 
-import gli_.hasnt
 import kotlin.math.PI
 import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.full.memberProperties

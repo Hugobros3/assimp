@@ -32,8 +32,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-    implementation 'com.github.kotlin-graphics:uno-sdk:641ec79aa3d5cf696590276f75b8b89804dc9d09'
-
+    //implementation 'com.github.kotlin-graphics:uno-sdk:641ec79aa3d5cf696590276f75b8b89804dc9d09'
+	implementation 'com.github.kotlin-graphics:glm:7651f1f42ef7fd6661fe8e27556f3060394d65cc'
+	
     testCompile 'io.kotlintest:kotlintest:2.0.7'
 
     implementation 'io.github.microutils:kotlin-logging:1.4.6'
@@ -45,7 +46,7 @@ dependencies {
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 	testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 	
-    switch (OperatingSystem.current()) {
+    /*switch (OperatingSystem.current()) {
         case OperatingSystem.WINDOWS:
             ext.lwjglNatives = "natives-windows"
             break
@@ -70,7 +71,7 @@ dependencies {
     testRuntime "org.lwjgl:lwjgl-jemalloc:${lwjglVersion}:${lwjglNatives}"
     testRuntime "org.lwjgl:lwjgl-openal:${lwjglVersion}:${lwjglNatives}"
     testRuntime "org.lwjgl:lwjgl-opengl:${lwjglVersion}:${lwjglNatives}"
-    testRuntime "org.lwjgl:lwjgl-stb:${lwjglVersion}:${lwjglNatives}"
+    testRuntime "org.lwjgl:lwjgl-stb:${lwjglVersion}:${lwjglNatives}"*/
 }
 
 repositories {

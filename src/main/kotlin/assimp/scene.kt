@@ -189,7 +189,7 @@ class AiScene {
      * Not many file formats embed their textures into the file.
      * An example is Quake's MDL format (which is also used by some GameStudio versions)
      */
-    val textures = mutableMapOf<String, gli_.Texture>()
+    val textures = mutableMapOf<String, AiTexture>()
 
     /** The number of light sources in the scene. Light sources are fully optional, in most cases this attribute
      * will be 0         */

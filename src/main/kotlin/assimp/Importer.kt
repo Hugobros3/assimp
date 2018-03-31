@@ -49,7 +49,7 @@ import glm_.i
 import glm_.mat4x4.Mat4
 import glm_.size
 import assimp.AiPostProcessSteps as Pps
-import uno.kotlin.uri
+//import uno.kotlin.uri
 import java.io.File
 import java.io.FileNotFoundException
 import java.net.URI
@@ -652,7 +652,7 @@ constructor() {
             for (i in 0 until scene.numTextures) {
                 val pc = scene.textures.values.elementAt(i)
                 mem.textures += AiTexture.size
-                mem.textures += with(pc.extent()) { if (y != 0) 4 * y * x else x }
+                mem.textures += with(pc) { if (height != 0) 4 * height * width else width }
             }
             mem.total += mem.textures
             // add all animations

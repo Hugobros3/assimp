@@ -1,8 +1,6 @@
 package X
 
 import assimp.*
-import gli_.Cache
-import gli_.Texture
 import io.kotlintest.matchers.*
 
 val x = models + "/X/"
@@ -45,7 +43,7 @@ fun compareScenes(aiScene1 : AiScene, aiScene2 : AiScene) {
     aiScene1.textures.size shouldBe aiScene2.textures.size
     for(entry in aiScene1.textures) {
         aiScene2.textures.containsKey(entry.key) shouldBe true
-        compareTextures(entry.value, aiScene2.textures[entry.key]!!)
+        //compareTextures(entry.value, aiScene2.textures[entry.key]!!)
     }
 
     aiScene1.numMeshes shouldBe aiScene2.numMeshes
@@ -54,7 +52,7 @@ fun compareScenes(aiScene1 : AiScene, aiScene2 : AiScene) {
     }
 }
 
-fun compareTextures(texture: Texture, texture1: Texture) {
+/*fun compareTextures(texture: Texture, texture1: Texture) {
     texture.baseFace shouldBe texture1.baseFace
     texture.baseLayer shouldBe texture1.baseLayer
     texture.baseLevel shouldBe texture1.baseLevel
@@ -72,7 +70,7 @@ fun compareCache(cache: Cache, cache1: Cache) {
     cache.faces shouldBe cache1.faces
     cache.levels shouldBe cache1.levels
     cache.memorySize shouldBe cache1.memorySize
-}
+}*/
 
 fun compareNode(rootNode: AiNode, rootNode1: AiNode) {
     rootNode.name shouldBe rootNode1.name

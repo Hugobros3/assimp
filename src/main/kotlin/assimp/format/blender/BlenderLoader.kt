@@ -4,7 +4,6 @@ import assimp.*
 import glm_.c
 import glm_.i
 import glm_.toUnsignedInt
-import uno.kotlin.parseInt
 import java.io.File
 import java.io.RandomAccessFile
 import java.net.URI
@@ -18,6 +17,9 @@ import java.util.zip.GZIPInputStream
 lateinit var buffer: ByteBuffer
 
 val tokens = "BLENDER"
+
+
+fun Char.parseInt() : Int { try { return Integer.parseInt(this+"") } catch(t : Throwable) { return 0 } }
 
 class BlenderImporter : BaseImporter() {
 

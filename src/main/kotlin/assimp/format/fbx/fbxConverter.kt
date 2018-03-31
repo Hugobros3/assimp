@@ -44,7 +44,6 @@ package assimp.format.fbx
 import assimp.*
 import assimp.AiTexture.Type as Tt
 import assimp.format.md5.mat
-import gli_.has
 import glm_.d
 import glm_.f
 import glm_.func.deg
@@ -545,7 +544,7 @@ class Converter(val out: AiScene, val doc: Document) {
             var bit = 0x1
             for (comp in Tc.values()) {
 
-                if (!chain[comp].isIdentity || animChainBitmask has bit) {
+                if (!chain[comp].isIdentity || (animChainBitmask and bit) != 0) {
 
                     if (comp == Tc.PostRotation) chain[comp].inverseAssign()
 
