@@ -390,20 +390,20 @@ class ColladaLoader : BaseImporter() {
 
         // copy positions
         dstMesh.numVertices = numVertices
-        dstMesh.vertices = pSrcMesh.mPositions.filterIndexed { i, vec3 -> i in pStartVertex until (pStartFace + numVertices) }.toMutableList()
+        dstMesh.vertices = pSrcMesh.mPositions.filterIndexed { i, vec3 -> i in pStartVertex until (pStartVertex + numVertices) }.toMutableList()
 
         // normals, if given. HACK: (thom) Due to the glorious Collada spec we never know if we have the same number of normals as there are positions. So we
         // also ignore any vertex attribute if it has a different count
         if (pSrcMesh.mNormals.size >= pStartVertex + numVertices)
-            dstMesh.normals = pSrcMesh.mNormals.filterIndexed { i, vec3 -> i in pStartVertex until (pStartFace + numVertices) }.toMutableList()
+            dstMesh.normals = pSrcMesh.mNormals.filterIndexed { i, vec3 -> i in pStartVertex until (pStartVertex + numVertices) }.toMutableList()
 
         // tangents, if given.
         if (pSrcMesh.mTangents.size >= pStartVertex + numVertices)
-            dstMesh.tangents = pSrcMesh.mTangents.filterIndexed { i, vec3 -> i in pStartVertex until (pStartFace + numVertices) }.toMutableList()
+            dstMesh.tangents = pSrcMesh.mTangents.filterIndexed { i, vec3 -> i in pStartVertex until (pStartVertex + numVertices) }.toMutableList()
 
         // bitangents, if given.
         if (pSrcMesh.mBitangents.size >= pStartVertex + numVertices)
-            dstMesh.bitangents = pSrcMesh.mBitangents.filterIndexed { i, vec3 -> i in pStartVertex until (pStartFace + numVertices) }.toMutableList()
+            dstMesh.bitangents = pSrcMesh.mBitangents.filterIndexed { i, vec3 -> i in pStartVertex until (pStartVertex + numVertices) }.toMutableList()
 
         // same for texturecoords, as many as we have empty slots are not allowed, need to pack and adjust UV indexes accordingly
         for (texNumber in 0 until pSrcMesh.mTexCoords.size) {
