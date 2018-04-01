@@ -650,8 +650,8 @@ class ColladaLoader : BaseImporter() {
                         0
                     }
 
-        if(idx != -1)
-            mat.textures.add(idx, tex)
+        //if(idx != -1)
+        mat.textures.add(idx + 1, tex)
     }
 
     /** Fills materials from the collada material definitions   */
@@ -732,14 +732,14 @@ class ColladaLoader : BaseImporter() {
         if (effect.mTexDiffuse.mName.isNotEmpty())
             addTexture(mat, pParser, effect, effect.mTexDiffuse, AiTexture.Type.diffuse)
 
-//        if (!effect.mTexBump.name.empty())
-//            AddTexture(mat, pParser, effect, effect.mTexBump, aiTextureType_NORMALS);
-//
-//        if (!effect.mTexTransparent.name.empty())
-//            AddTexture(mat, pParser, effect, effect.mTexTransparent, aiTextureType_OPACITY);
-//
-//        if (!effect.mTexReflective.name.empty())
-//            AddTexture(mat, pParser, effect, effect.mTexReflective, aiTextureType_REFLECTION);
+        if (effect.mTexBump.mName.isNotEmpty())
+            addTexture(mat, pParser, effect, effect.mTexBump, AiTexture.Type.normals);
+
+        if (effect.mTexTransparent.mName.isNotEmpty())
+            addTexture(mat, pParser, effect, effect.mTexTransparent, AiTexture.Type.opacity);
+
+        if (effect.mTexReflective.mName.isNotEmpty())
+            addTexture(mat, pParser, effect, effect.mTexReflective, AiTexture.Type.reflection);
     }
 
     /** Constructs materials from the collada material definitions  */
